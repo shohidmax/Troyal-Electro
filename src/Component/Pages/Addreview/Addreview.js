@@ -11,11 +11,8 @@ const Addreview = () => {
 
   const handleAddUser = event =>{
     event.preventDefault();
-     const rating = event.target.rating.value;
-     const rate = 5;
-     if(rating.length == rate){
-
-     }
+     
+     
     const image = event.target.img.files[0];
     console.log(image);
         const formData = new FormData();
@@ -30,17 +27,13 @@ const Addreview = () => {
             if(result.success){
                 const img = result.data.url;
                 const name = event.target.name.value;
-                const minorder = event.target.minorder.value;
-                const model = event.target.model.value;
-                const Stock_Qty = event.target.Stock_Qty.value;
-                const RPU = event.target.RPU.value;
                 const long_discription = event.target.long_discription.value;
                 const email = event.target.email.value;
-          
-                const Productdata = {name, minorder, model, Stock_Qty, RPU, long_discription, email, img};
+                const rating = event.target.rating.value;
+                const Productdata = {name, rating, long_discription, email, img};
           
                 // send data to the server
-                fetch('http://localhost:5000/products', {
+                fetch('http://localhost:5000/review', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -72,9 +65,14 @@ const Addreview = () => {
           <div className='col-md-4 border border-primary rounded mt-2 mb-2'>
           <h2>Add Product</h2>
           <form onSubmit={handleAddUser}>
-          <input  className="form-text form-control mb-2"   type="text" name="name" placeholder='Product name' required />    
-          <input  className="form-text form-control mb-2"   type="number" name="rating" placeholder='rating out of five' required />    
-          <input  className="form-text form-control mb-2"   type="text" name="model" placeholder='Product model No.' required />     
+          <input  className="form-text form-control mb-2"   type="text" name="name" value={user?.displayName} required />    
+          <select className="form-text form-control mb-2"  name="rating" >
+                 <option value="5">5 out of 5</option>
+                 <option value="4">5 out of 4</option>
+                 <option value="3">5 out of 3</option>
+                <option value="2">5 out of 2</option>
+                <option value="1">5 out of 1</option>
+            </select>     
           <input  className="form-text form-control mb-2"   type="email" name="email" value={user?.email} readOnly  required />
           <label className="form-label mb-2" for="customFile">Choose a Product Image </label>
           <input type="file" className="form-control  mb-2" name="img" />    

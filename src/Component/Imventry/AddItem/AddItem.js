@@ -1,12 +1,13 @@
 import React from 'react';
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from '../../../firebase.init';
+
 const imageStorageKey='7dec4c10f51e1e22708ccd12b0590a32';
 
 const AddItem = () => {
   const [user] = useAuthState(auth);
 
-
+console.log(user);
 
   const handleAddUser = event =>{
     event.preventDefault();
@@ -66,7 +67,7 @@ const AddItem = () => {
           <div className='col-md-4 border border-primary rounded mt-2 mb-2'>
           <h2>Add Product</h2>
           <form onSubmit={handleAddUser}>
-          <input  className="form-text form-control mb-2"   type="text" name="BarCode" placeholder='Product name' required />    
+          <input  className="form-text form-control mb-2"   type="text" name="BarCode"  placeholder='Product name' required />    
           <input  className="form-text form-control mb-2"   type="number" name="minorder" placeholder='minimum order Quntity' required />    
           <input  className="form-text form-control mb-2"   type="text" name="model" placeholder='Product model No.' required />    
           <input  className="form-text form-control mb-2"   type="number" name="Stock_Qty" placeholder='Product Stock Quntity' required />      
