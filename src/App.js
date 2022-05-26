@@ -25,6 +25,7 @@ import Addproduct from './Component/Imventry/Addproduct';
 import Tools from './Component/Pages/Tools/Tools';
 import Review from './Component/Pages/Review/Review';
 import Users from './Component/Pages/Dashboard/Users';
+import Purches from './Component/Pages/Purches/Purches';
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
         
         
         <Route path='/myprotfolio' element={<Myprotfolio/>}></Route>
+        <Route path='/purches/:id' element={<Requireauth><Purches/></Requireauth>}></Route>
        
         <Route path='/manageProduct' element={<ManageProduct/>}></Route>
         <Route path='/manageallorders' element={<ManageallOrders/>}></Route>

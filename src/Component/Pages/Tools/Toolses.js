@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Toolses = ({
   name,
@@ -8,7 +9,8 @@ const Toolses = ({
   Stock_Qty,
   RPU,
   long_discription,
-  clicked
+  clicked,
+  _id
 }) => {
   return (
     <div className="col-md-4">
@@ -24,7 +26,8 @@ const Toolses = ({
           <li class="list-group-item">Minimum Order : {minorder} pcs</li>
         </ul>
         <div class="card-body">
-          <button className="btn btn-primary w-50" onClick={clicked}>Purched</button>
+          
+          <Link to={`/Purches/${_id}`}><button className="btn btn-primary w-50">purches</button></Link>
         </div>
       </div>
     </div>

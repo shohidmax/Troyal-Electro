@@ -29,6 +29,7 @@ const Dashboard = () => {
               { user? (<><Link className="btn btn-primary" to="/dashboard/makeadmin">Make Admin</Link>
               <Link className="btn btn-primary" to="/dashboard/manageallorders">Manage All Order</Link>
               <Link className="btn btn-primary" to="/dashboard/addreview">add Review</Link>
+              <Link className="btn btn-primary" to="/dashboard/myorder">my order</Link>
               <Link className="btn btn-primary" to="dashboard">My Item</Link>
               <button className="btn btn-primary" onClick={LogOut} > LogOut</button></>):(
               <Link className="btn btn-primary" to="Login">Login</Link>)

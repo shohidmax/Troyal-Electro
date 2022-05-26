@@ -35,6 +35,7 @@ const Login = () => {
   if (loading || gLoading) {
     return <Loading></Loading>;
   }
+ 
 
   if (error || gError) {
     signInError = (
@@ -47,6 +48,9 @@ const Login = () => {
   const onSubmit = (data) => {
     signInWithEmailAndPassword(data.email, data.password);
   };
+  if (user) {
+    navigate(from, {replace: true});
+}
 
   return (
     <div className="container">

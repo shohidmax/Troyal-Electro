@@ -13,6 +13,7 @@ const Tools = () => {
             <div className='row'>
                 {
                     Product.map( tool =>  <Toolses
+                        _id={tool._id}
                         key={tool._id}
                         minorder={tool.minorder}
                         model={tool.model}
