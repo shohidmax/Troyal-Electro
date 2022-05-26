@@ -22,6 +22,9 @@ import MakeAdmin from './Component/Pages/MakeAdmin/MakeAdmin';
 import Addreview from './Component/Pages/Addreview/Addreview';
 import AddItem from './Component/Imventry/AddItem/AddItem';
 import Addproduct from './Component/Imventry/Addproduct';
+import Tools from './Component/Pages/Tools/Tools';
+import Review from './Component/Pages/Review/Review';
+import Users from './Component/Pages/Dashboard/Users';
 
 function App() {
   return (
@@ -39,9 +42,14 @@ function App() {
        
         <Route path='/manageProduct' element={<ManageProduct/>}></Route>
         <Route path='/manageallorders' element={<ManageallOrders/>}></Route>
+        <Route path='/tools' element={<Tools/>}></Route>
+        
         <Route path='/makeadmin' element={<MakeAdmin/>}></Route>
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/Login' element={<Login></Login>}></Route>
+        <Route path='/review' element={<Review></Review>}></Route>
+        <Route path='/users' element={<Users></Users>}></Route>
+        
         <Route path='/Signup' element={<Signup></Signup>}></Route> 
         <Route path='/dashboard' element={<Dashboard/>}>
               <Route index element={<Myprofile/>}></Route>

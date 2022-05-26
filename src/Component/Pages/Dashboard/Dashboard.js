@@ -4,9 +4,11 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, Outlet } from "react-router-dom";
 import auth from "../../../firebase.init";
+import useAdmin from "../../../Hooks/useAdmin";
 
 const Dashboard = () => {
   const [user] = useAuthState(auth);
+  const [admin] = useAdmin(user);
   const LogOut = () => {
     signOut(auth);
   };

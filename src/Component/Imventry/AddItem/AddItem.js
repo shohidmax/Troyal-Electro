@@ -67,7 +67,7 @@ console.log(user);
           <div className='col-md-4 border border-primary rounded mt-2 mb-2'>
           <h2>Add Product</h2>
           <form onSubmit={handleAddUser}>
-          <input  className="form-text form-control mb-2"   type="text" name="BarCode"  placeholder='Product name' required />    
+          <input  className="form-text form-control mb-2"   type="text" name="name"  placeholder='Product name' required />    
           <input  className="form-text form-control mb-2"   type="number" name="minorder" placeholder='minimum order Quntity' required />    
           <input  className="form-text form-control mb-2"   type="text" name="model" placeholder='Product model No.' required />    
           <input  className="form-text form-control mb-2"   type="number" name="Stock_Qty" placeholder='Product Stock Quntity' required />      

@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import auth from "../../../firebase.init";
-import logo from "./Logo.png";
+import logo from "./logo.png";
 import { signOut } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 
@@ -19,7 +19,7 @@ const Header = () => {
           <Navbar.Brand href="../home">
             <img alt="" src={logo} width="30" height="30" className="d-inline-block align-top" />
             {"  "} 
-            UniMart
+            Troyal Electro
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
