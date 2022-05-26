@@ -15,7 +15,7 @@ const Myprofile = () => {
                     <ul class="list-group list-group-flush">
                       <li class="list-group-item">User Name : {user.displayName}</li>
                       <li class="list-group-item">Email : {user.email}</li>
-                      <li class="list-group-item">A third ite</li>
+                      <li class="list-group-item">A third i</li>
                     </ul>
                 </div>
 
