@@ -4,8 +4,9 @@ const useToken = user =>{
     const [token, setToken] = useState('');
     useEffect( () =>{
         const email = user?.user?.email;
+        console.log(email);
         const currentUser = {email: email};
-        const url = `http://localhost:3000/user/${email}`;
+        const url = `http://localhost:5000/users/${email}`;
         if(email){
             fetch(url, {
                 method:'PUT',
@@ -15,9 +16,9 @@ const useToken = user =>{
                 body:JSON.stringify(currentUser)
             })
             .then(res=>res.json())
-            .then(data => {
-                console.log('data inside useToken', data);
-                const accessToken = data.token;
+            .then(p => {
+                console.log('data inside useToken', p);
+                const accessToken = p.token;
                 localStorage.setItem('accessToken', accessToken);
                 setToken(accessToken);
             })

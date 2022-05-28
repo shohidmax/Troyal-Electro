@@ -10,6 +10,7 @@ const Header = () => {
   const [user] = useAuthState(auth);
   const LogOut = () => {
     signOut(auth);
+    localStorage.removeItem('accessToken');
   };
   return (
     <div>
@@ -25,12 +26,13 @@ const Header = () => {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ms-auto">
               <Link className="btn btn-primary" to="home">Home</Link>
-              <Link className="btn btn-primary" to="myprotfolio">My Protfolio</Link>
+              
               <Link className="btn btn-primary" to="Blogs">Blogs</Link>
+              <Link className="btn btn-primary" to="myprotfolio">My Protfolio</Link>
               <Link className="btn btn-primary" to="about">About</Link>
               { user? (<>
               <Link className="btn btn-primary" to="dashboard">Dashboard</Link>
-              <button className="btn btn-primary" onClick={LogOut} > LogOut</button></>):(
+              <button className="btn btn-primary" onClick={LogOut} >{user?.displayName} - LogOut</button></>):(
               <Link className="btn btn-primary" to="Login">Login</Link>)
 
               }

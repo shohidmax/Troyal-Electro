@@ -1,58 +1,60 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import useProduct from '../../../Hooks/useProduct';
+import useOrder from '../../../Hooks/useOrder';
 
-const ManageProduct = () => {
-    const [Product, setProduct] = useProduct();
+const Manageorder = () => {
+    const [Order, setOrder] = useOrder();
     const handleUserDelete = id =>{
         const proceed = window.confirm('Are you sure you want to delete?');
         if(proceed){
-            const url = `http://localhost:5000/products/${id}`;
+            const url = `http://localhost:5000/orders/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
             .then(res => res.json())
             .then(data =>{
                 if(data.deletedCount > 0){
-                    const remaining = Product.filter(data => data._id !== id);
-                    setProduct(remaining);
+                    const remaining = Order.filter(data => data._id !== id);
+                    setOrder(remaining);
                 }
             })
         }
-    }
 
+    }
     return (
-        <div>
-            <h1>product : {Product.length}</h1>
-            <div className="container">
+        <div className="container">
       <div className="row">
         <div className="col-md-12">
-          <h2>Total Product {Product.length}</h2>
+          <h2>Total Product {Order.length}</h2>
 
           <Table striped bordered hover>
             <thead>
+
               <tr>
-                <th>Barcode</th>
-                <th>Product Image</th>
-                <th>Product Name</th>
-                <th>Stock Quntity </th>
-                <th>Suppler Name</th>
+                <th>Order Qty</th>
+                <th>Name</th>
+                <th>city</th>
+                <th>Product name </th>
+                <th>Model Name</th>
                 <th>MRP ৳</th>
                 <th>Delete</th>
+                <th>shipped</th>
                 <th>Update</th>
               </tr>
             </thead>
             <tbody>
-              {Product.map((res) => (
+              {Order.map((res) => (
                 <tr key={res._id}>
-                  <td>{res.BarCode}</td>
-                  <td><img style={{width: '45px'}} src={res.Product_img_url} alt="" /></td>
-                  <td>{res.Brand}{" "}{res.Product}{" "} {res.Style}</td>
-                  <td>{res.Stock_Qty}</td>
-                  <td>{res.Brand} Ltd.</td>
-                  <td>৳ : {res.RPU}</td>
+                  <td>{res.OrderQty}</td>
+                  <td>{res.username}</td>
+                  <td>{res.Productname}</td>
+                  <td>{res.pmodel} Ltd.</td>
+                  <td>৳ : {res.unitprice}</td>
                   <td><button className="btn btn-danger" onClick={() => handleUserDelete(res._id)}>Delete</button></td>
+                  <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+  Launch demo modal
+</button></td>
                   <td><Link to={`/inventory/${res._id}`}><button className="btn btn-primary">Update</button></Link></td>
                 </tr>
               ))}
@@ -64,9 +66,7 @@ const ManageProduct = () => {
         </div>
       </div>
     </div>
-            
-        </div>
     );
 };
 
-export default ManageProduct;
+export default Manageorder;

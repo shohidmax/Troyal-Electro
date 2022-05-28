@@ -9,7 +9,6 @@ import Login from './Component/Pages/User/Login/Login';
 import Signup from './Component/Pages/User/Signup/Signup';
 import Requireauth from './Component/Shaired/Requireauth';
 import Notfound from './Component/Notfound/Notfound';
-import { ToastContainer } from 'react-toastify';
 import UpdatePassword from './Component/Pages/User/UpdatePassword/UpdatePassword';
 import Passwordreset from './Component/Pages/User/Passwordreset/Passwordreset';
 import Dashboard from './Component/Pages/Dashboard/Dashboard';
@@ -26,6 +25,11 @@ import Tools from './Component/Pages/Tools/Tools';
 import Review from './Component/Pages/Review/Review';
 import Users from './Component/Pages/Dashboard/Users';
 import Purches from './Component/Pages/Purches/Purches';
+import Manageorder from './Component/Pages/Myorder/Manageorder';
+import { ToastContainer } from 'react-toastify';
+import RequireAdmin from './Component/Shaired/RequireAdmin';
+import Payment from './Component/Pages/Dashboard/Payment';
+// import ManageProduct from './Component/Pages/Myorder/ManageProduct';
 
 function App() {
   return (
@@ -42,7 +46,7 @@ function App() {
         <Route path='/myprotfolio' element={<Myprotfolio/>}></Route>
         <Route path='/purches/:id' element={<Requireauth><Purches/></Requireauth>}></Route>
        
-        <Route path='/manageProduct' element={<ManageProduct/>}></Route>
+        
         <Route path='/manageallorders' element={<ManageallOrders/>}></Route>
         <Route path='/tools' element={<Tools/>}></Route>
         
@@ -50,25 +54,30 @@ function App() {
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/Login' element={<Login></Login>}></Route>
         <Route path='/review' element={<Review></Review>}></Route>
-        <Route path='/users' element={<Users></Users>}></Route>
+        
+        
+        
         
         <Route path='/Signup' element={<Signup></Signup>}></Route> 
-        <Route path='/dashboard' element={<Dashboard/>}>
+        <Route path='/dashboard' element={<Requireauth><Dashboard/></Requireauth>}>
               <Route index element={<Myprofile/>}></Route>
-              <Route path='/dashboard/myorder' element={<Myorder/>}></Route>
+              <Route path='/dashboard/myorder' element={<Requireauth><Myorder/></Requireauth>}></Route>
               <Route path='/dashboard/myprofile' element={<Myprofile/>}></Route>
-              <Route path='/dashboard/myprofile' element={<ManageProduct/>}></Route>
+              <Route path='/dashboard/myprofile' element={<Requireauth><ManageProduct/></Requireauth>}></Route>
               <Route path='/dashboard/manageallorders' element={<ManageallOrders/>}></Route>
               <Route path='/dashboard/makeadmin' element={<MakeAdmin/>}></Route>
               <Route path='/dashboard/addreview' element={<Addreview/>}></Route>
+              <Route path="payment/:id" element={<Payment></Payment>}></Route>
               <Route path='/dashboard/addItem' element={<AddItem/>}></Route>
-          
+              <Route path='/dashboard/users' element={<Users></Users>}></Route>
+              <Route path='/dashboard/manageorder' element={<Requireauth><Manageorder></Manageorder></Requireauth>}></Route>
+              <Route path='/dashboard/manageproduct' element={<RequireAdmin><ManageProduct/></RequireAdmin>}></Route>
         </Route> 
         <Route path='/Updatepassword' element={<UpdatePassword></UpdatePassword>}>SignUp</Route> 
         <Route path='/passwordreset' element={<Passwordreset></Passwordreset>}>SignUp</Route> 
         <Route path='*' element={<Notfound></Notfound>}>not found</Route>
       </Routes>
-      <ToastContainer />
+      <ToastContainer/>
       
     </div>
   );

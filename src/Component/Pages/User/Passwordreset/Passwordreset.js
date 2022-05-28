@@ -20,13 +20,24 @@ const Passwordreset = () => {
     return <p>Sending...</p>;
   }
   return (
-    <div className="App">
+    <div className='container'>
+      <div className='row'>
+        <div className='col-md-4'>
+
+        </div>
+        <div className='col-md-4'>
+        <div className="App mt-4">
       <input
+      className="form-text form-control w-100  mt-4 me-2"
+      placeholder='Your Email Address'
         type="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
+        required
       />
       <button
+      className='btn btn-primary mt-2'
+
         onClick={async () => {
           await sendPasswordResetEmail(email);
           alert('Sent email');
@@ -34,6 +45,13 @@ const Passwordreset = () => {
       >
         Reset password
       </button>
+    </div>
+
+        </div>
+        <div className='col-md-4'>
+
+        </div>
+      </div>
     </div>
   );
 };

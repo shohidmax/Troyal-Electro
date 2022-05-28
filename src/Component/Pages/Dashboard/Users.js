@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
+import Loading from '../../Element/Loading';
 import UserRow from './UserRow';
 
 const Users = () => {
@@ -10,16 +11,17 @@ const Users = () => {
         }
     }).then(res => res.json()));
     if (isLoading) {
-        return <p>loading</p>;
+        return <Loading></Loading>;
     }
+
     return (
         <div  className='container'>
             <h1>user role page</h1>
             <div className='row'>
             <div className='col-md-12'>
             <h2 className="text-primary">All Users: {users.length}</h2>
-            <div class="overflow-x-auto">
-                <table class="table  w-100">
+            <div className=" ">
+                <table className="table  w-100">
                     <thead>
                         <tr>
                             <th></th>

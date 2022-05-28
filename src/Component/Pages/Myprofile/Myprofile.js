@@ -11,11 +11,11 @@ const Myprofile = () => {
 
                 </div>
                 <div className='col-md-4'>
-                <div class="card w-100">
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item">User Name : {user.displayName}</li>
-                      <li class="list-group-item">Email : {user.email}</li>
-                      <li class="list-group-item">  </li>
+                <div className="card w-100">
+                    <ul className="list-group list-group-flush">
+                      <li className="list-group-item">User Name : {user?.displayName}</li>
+                      <li className="list-group-item">Email : {user?.email}</li>
+                      <li className="list-group-item">  </li>
                     </ul>
                 </div>
 

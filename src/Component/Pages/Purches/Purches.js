@@ -26,6 +26,9 @@ const handelOrder = event =>{
 
 
         const OrderQty = event.target.OrderQty.value;
+        const unitprice = Pdata.RPU;
+        const Productname = event.target.Productname.value;
+        const pmodel = event.target.pmodel.value;
         const email = event.target.email.value;
         const username = event.target.username.value;
         const city = event.target.city.value;
@@ -34,9 +37,10 @@ const handelOrder = event =>{
         const houseno = event.target.houseno.value;
         const daddress = event.target.daddress.value;
         const Number = event.target.Number.value;
+        const payprice = OrderQty * unitprice;
         // const email = event.target.email.value;
 
-        const orderdata = {OrderQty, email, username, city, state, zipcode, houseno, daddress,Number};
+        const orderdata = {OrderQty, email, username, city, state, zipcode, houseno, daddress, Number, Productname, pmodel, unitprice, payprice};
 
 
         // send data to the server
@@ -49,13 +53,13 @@ const handelOrder = event =>{
                 })
                 .then(res => res.json())
                 .then(data =>{
-                    alert('Product added successfully!!!');
+                    alert('Product purches successfully!!!');
                     event.target.reset();
                 })
 
     }
     else{
-        alert(`Pleasse Order more than ${Pdata.minorder} pcs`);
+        alert(`Pleasse Order more than ${Pdata.minorder} pcs and not more than maximum quntity`);
     }
 
   
@@ -71,18 +75,20 @@ const handelOrder = event =>{
       <div className="row">
         <div className="col-md-4"></div>
         <div className="col-md-4">
-          <div class="card-body">
-          <img class="card-img-top img-thumbnail" style={{height: '200px'}} src={Pdata.img} alt="Card image cap"/>
-            <h3 class="card-title"> Product Name{Pdata.name}</h3>
-            <p class="card-text">{Pdata.long_discription}</p>
+          <div className="card-body">
+          <img className="card-img-top img-thumbnail" style={{height: '200px'}} src={Pdata.img} alt="Card image cap"/>
+            <h3 className="card-title"> Product Name{Pdata.name}</h3>
+            <p className="card-text">{Pdata.long_discription}</p>
           </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">Model : {Pdata.model}</li>
-            <li class="list-group-item">Price : {Pdata.RPU}</li>
-            <li class="list-group-item">  Minimum Order : {Pdata.minorder} pcs</li>
-            <li class="list-group-item">  Stock Quantity : {Pdata.Stock_Qty} pcs</li>
+          <ul className="list-group list-group-flush">
+            <li className="list-group-item">Model : {Pdata.model}</li>
+            <li className="list-group-item">Price : {Pdata.RPU}</li>
+            <li className="list-group-item">  Minimum Order : {Pdata.minorder} pcs</li>
+            <li className="list-group-item">  Stock Quantity : {Pdata.Stock_Qty} pcs</li>
             <div className="mt-2">
                 <form onSubmit={handelOrder}>
+                <input  className="form-text form-control mb-2"   type="text" name="Productname" value={Pdata.name} readOnly  required />
+                <input  className="form-text form-control mb-2"   type="text" name="pmodel" value={Pdata.model} readOnly  required />
                     
                 <input  className="form-text form-control mb-2"   type="number" name="OrderQty" placeholder={Pdata.minorder} required />
                 <input  className="form-text form-control mb-2"   type="email" name="email" value={user?.email} readOnly  required />
