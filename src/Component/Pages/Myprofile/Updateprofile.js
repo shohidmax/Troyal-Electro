@@ -13,7 +13,7 @@ const Updateprofile = () => {
         const location = event.target.location.value;
         const phoneN = event.target.phoneN.value;
         const socialurl = event.target.socialurl.value;
-        const address = event.target.education.value;
+        const address = event.target.address.value;
         const currentUser = {education, location, phoneN, socialurl, address};
             fetch(`https://shielded-beyond-98967.herokuapp.com/users1/${email}`, {
                 method:'PUT',
