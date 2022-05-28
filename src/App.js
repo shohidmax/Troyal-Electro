@@ -55,7 +55,7 @@ function App() {
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/Login' element={<Login></Login>}></Route>
         <Route path='/review' element={<Review></Review>}></Route>
-        <Route path='/updateprofile' element={<Updateprofile></Updateprofile>}></Route>
+        
         
         
         
@@ -75,6 +75,7 @@ function App() {
               <Route path='/dashboard/users' element={<Requireauth><Users></Users></Requireauth>}></Route>
               <Route path='/dashboard/manageorder' element={<Requireauth><Manageorder></Manageorder></Requireauth>}></Route>
               <Route path='/dashboard/manageproduct' element={<RequireAdmin><ManageProduct/></RequireAdmin>}></Route>
+              <Route path='/dashboard/updateprofile' element={<Requireauth><Updateprofile></Updateprofile></Requireauth>}></Route>
         </Route> 
         <Route path='/Updatepassword' element={<UpdatePassword></UpdatePassword>}>SignUp</Route> 
         <Route path='/passwordreset' element={<Passwordreset></Passwordreset>}>SignUp</Route> 

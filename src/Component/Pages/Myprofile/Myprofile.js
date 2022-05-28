@@ -18,7 +18,7 @@ const Myprofile = () => {
                     <ul className="list-group list-group-flush">
                       <li className="list-group-item">User Name : {user?.displayName}</li>
                       <li className="list-group-item">Email : {user?.email}</li>  
-                      <li className="list-group-item"> <Link to="/updateprofile" className='btn btn-success'>Update Profile</Link></li>
+                      <li className="list-group-item"> <Link to="/dashboard/updateprofile" className='btn btn-success'>Update Profile</Link></li>
                     </ul>
                 </div>
 

@@ -40,7 +40,7 @@ const Profilecard = () => {
               <li className="list-group-item">Education : {user1?.education}</li>  
               <li className="list-group-item">Location : {user1?.location}</li>  
               <li className="list-group-item">Phone : {user1?.phoneN}</li>  
-              <li className="list-group-item"><a href={user.socialurl}> Social Profile{user.socialurl}</a></li>  
+              <li className="list-group-item"><a href={user1?.socialurl}> Social Profile{user.socialurl}</a></li>  
 
               <li className="list-group-item"> <Link to="/dashboard" className='btn btn-success'>Dashboard</Link></li>
             </ul>
