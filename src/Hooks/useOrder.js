@@ -4,7 +4,7 @@ const useProduct = () =>{
     const [Order, setOrder] = useState([]);
 
     useEffect( ()=>{
-        fetch('http://localhost:5000/orders',{
+        fetch('https://shielded-beyond-98967.herokuapp.com/orders',{
             headers:{
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
             }

@@ -4,9 +4,9 @@ import useReview from '../../../Hooks/useReview';
 const Review = () => {
     const [Review, setReview] = useReview();
     return (
-        <div className='container'>
+        <div className='container m-3'>
             <div className='row'>
-                <h1>revew {Review.length}</h1>
+                <h1 className='text-info'>Coustomar Review</h1>
                 {
                     Review.map(R => <div className="col-md-3">
                     <div className="card ">

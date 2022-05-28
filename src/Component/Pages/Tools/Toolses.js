@@ -14,7 +14,7 @@ const Toolses = ({
 }) => {
   return (
     <div className="col-md-4">
-      <div className="card m-2 p-2 w-100" >
+      <div className=" shadow-lg card m-2 p-2 w-100" >
         <img className="card-img-top image-fluid" src={img} alt="Card image cap" />
         <div className="card-body">
           <h5 className="card-title">{name}</h5>

@@ -9,12 +9,8 @@ const Purches = () => {
   const [Pdata, setPdata] = useState({});
   const [Qtt, setQtt] = useState('');
   useEffect(() => {
-    const url = `http://localhost:5000/products/${id}`;
-    fetch(url,{
-      headers: {
-        'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-    }
-    })
+    const url = `https://shielded-beyond-98967.herokuapp.com/products/${id}`;
+    fetch(url)
       .then((r) => r.json())
       .then((data) => setPdata(data));
   }, []);
@@ -48,7 +44,7 @@ const handelOrder = event =>{
 
 
         // send data to the server
-        fetch('http://localhost:5000/order', {
+        fetch('https://shielded-beyond-98967.herokuapp.com/order', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json',

@@ -5,10 +5,10 @@ const useProduct = () =>{
     const [Product, setProduct] = useState([]);
 
     useEffect( ()=>{
-        fetch('http://localhost:5000/products',{
-            headers: {
+        fetch('https://shielded-beyond-98967.herokuapp.com/products',{
+            headers:{
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-            }
+              }
         })
         .then(res => res.json())
         .then(data => setProduct(data));

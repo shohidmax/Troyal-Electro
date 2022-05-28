@@ -6,7 +6,7 @@ const useToken = user =>{
         const email = user?.user?.email;
         console.log(email);
         const currentUser = {email: email};
-        const url = `http://localhost:5000/users/${email}`;
+        const url = `https://shielded-beyond-98967.herokuapp.com/users/${email}`;
         if(email){
             fetch(url, {
                 method:'PUT',

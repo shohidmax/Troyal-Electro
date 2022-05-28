@@ -9,7 +9,7 @@ const Tools = () => {
     }
     return (
         <div className='container'>
-            <h1>product {Product.length}</h1>
+            <h1 className='text-info m-2'>Our products </h1>
             <div className='row'>
                 {
                     Product.map( tool =>  <Toolses

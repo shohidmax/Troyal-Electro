@@ -33,7 +33,7 @@ const Addreview = () => {
                 const Productdata = {name, rating, long_discription, email, img};
           
                 // send data to the server
-                fetch('http://localhost:5000/review', {
+                fetch('https://shielded-beyond-98967.herokuapp.com/review', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json',

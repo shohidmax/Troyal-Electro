@@ -106,7 +106,7 @@ const Blogs = () => {
                 "product_short data":  STATIONERY ",
                 "long_discription": "FABER-CASTELL DUST FREE ERASER is the original Product of FABER-CASTELL. It is a STATIONERY item . It is ERASER. To chaque it online by this barcode - ||||| ."` --
             </p>
-            <p>tO FIND BY NAME with ....api http://localhost:5000/api/product/Producrt_title=FABER-CASTELL DUST FREE ERASER
+            <p>tO FIND BY NAME with ....api https://shielded-beyond-98967.herokuapp.com/api/product/Producrt_title=FABER-CASTELL DUST FREE ERASER
 </p>
           </div>
           <div className="mt-2 mb-2">

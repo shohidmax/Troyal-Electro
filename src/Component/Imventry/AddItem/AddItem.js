@@ -35,7 +35,7 @@ console.log(user);
                 const Productdata = {name, minorder, model, Stock_Qty, RPU, long_discription, email, img};
           
                 // send data to the server
-                fetch('http://localhost:5000/products', {
+                fetch('https://shielded-beyond-98967.herokuapp.com/products', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json',

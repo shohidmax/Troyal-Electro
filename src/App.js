@@ -29,12 +29,13 @@ import Manageorder from './Component/Pages/Myorder/Manageorder';
 import { ToastContainer } from 'react-toastify';
 import RequireAdmin from './Component/Shaired/RequireAdmin';
 import Payment from './Component/Pages/Dashboard/Payment';
+import Updateprofile from './Component/Pages/Myprofile/Updateprofile';
+import Profilecard from './Component/Pages/Myprofile/Profilecard';
 // import ManageProduct from './Component/Pages/Myorder/ManageProduct';
 
 function App() {
   return (
     <div className="App">
-      <h1>please connect you have only 12hour </h1>
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
@@ -54,6 +55,7 @@ function App() {
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/Login' element={<Login></Login>}></Route>
         <Route path='/review' element={<Review></Review>}></Route>
+        <Route path='/updateprofile' element={<Updateprofile></Updateprofile>}></Route>
         
         
         
@@ -63,13 +65,14 @@ function App() {
               <Route index element={<Myprofile/>}></Route>
               <Route path='/dashboard/myorder' element={<Requireauth><Myorder/></Requireauth>}></Route>
               <Route path='/dashboard/myprofile' element={<Myprofile/>}></Route>
+              <Route path='/dashboard/profilecard' element={<Profilecard/>}></Route>
               <Route path='/dashboard/myprofile' element={<Requireauth><ManageProduct/></Requireauth>}></Route>
-              <Route path='/dashboard/manageallorders' element={<ManageallOrders/>}></Route>
-              <Route path='/dashboard/makeadmin' element={<MakeAdmin/>}></Route>
-              <Route path='/dashboard/addreview' element={<Addreview/>}></Route>
-              <Route path="payment/:id" element={<Payment></Payment>}></Route>
-              <Route path='/dashboard/addItem' element={<AddItem/>}></Route>
-              <Route path='/dashboard/users' element={<Users></Users>}></Route>
+              <Route path='/dashboard/manageallorders' element={<Requireauth><RequireAdmin><ManageallOrders/></RequireAdmin></Requireauth>}></Route>
+              <Route path='/dashboard/makeadmin' element={<Requireauth><RequireAdmin><MakeAdmin/></RequireAdmin></Requireauth>}></Route>
+              <Route path='/dashboard/addreview' element={<Requireauth><Addreview/></Requireauth>}></Route>
+              <Route path="payment/:id" element={<Requireauth><Payment></Payment></Requireauth>}></Route>
+              <Route path='/dashboard/addItem' element={<Requireauth><RequireAdmin><AddItem/></RequireAdmin></Requireauth>}></Route>
+              <Route path='/dashboard/users' element={<Requireauth><Users></Users></Requireauth>}></Route>
               <Route path='/dashboard/manageorder' element={<Requireauth><Manageorder></Manageorder></Requireauth>}></Route>
               <Route path='/dashboard/manageproduct' element={<RequireAdmin><ManageProduct/></RequireAdmin>}></Route>
         </Route> 

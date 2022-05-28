@@ -7,9 +7,9 @@ const Contact = () => {
   }
   return (
     
-      <div className="bg-info p-2 text-dark bg-opacity-25 container border bordrt-primary">
+      <div className="bg-info p-2 mb-2 text-dark bg-opacity-25 container border bordrt-primary">
           <h2>Contact us</h2>
-          <div className="row">
+          <div className="row mb-2">
               <div className="col-md-6">
                   <form className="mt-3" onSubmit={HandleForm}>
                   <div className="mb-3">

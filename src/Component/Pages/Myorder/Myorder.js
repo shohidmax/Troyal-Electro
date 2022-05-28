@@ -12,7 +12,7 @@ const Myorder = () => {
     useEffect(() => {
         
         if (user) {
-            fetch(`http://localhost:5000/order?email=${user.email}`, {
+            fetch(`https://shielded-beyond-98967.herokuapp.com/order?email=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -38,7 +38,7 @@ const Myorder = () => {
         
             const proceed = window.confirm('Are you sure you want to delete?');
             if(proceed){
-                const url = `http://localhost:5000/order/${id}`;
+                const url = `https://shielded-beyond-98967.herokuapp.com/order/${id}`;
                 fetch(url, {
                     method: 'DELETE',
                     headers: {
@@ -74,6 +74,7 @@ const Myorder = () => {
                             <th>payment</th>
                             <th>Transaction id</th>
                             <th>Action</th>
+                            <th>status</th>
                         </tr>
 
 
@@ -97,6 +98,7 @@ const Myorder = () => {
                                 </td>
                                 <td><small style={{width: '30px'}}> <span className='text-success'>{a.transactionId}</span></small></td>
                                 <td> {a.paid? <button className='btn btn-succcess text-success '> Deleverd</button>:<button className='btn btn-primary danger' onClick={() => handleCancil(a._id)}>Cancel order</button>}</td>
+                                <td> {a.status? <button className='btn btn-succcess text-success '> {a.status}</button>:<button className='btn btn-primary danger' onClick={() => handleCancil(a._id)}>Cancel order</button>}</td>
                             </tr>)
                         }
 

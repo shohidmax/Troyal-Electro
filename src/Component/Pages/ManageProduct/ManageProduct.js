@@ -8,7 +8,7 @@ const ManageProduct = () => {
     const handleUserDelete = id =>{
         const proceed = window.confirm('Are you sure you want to delete?');
         if(proceed){
-            const url = `http://localhost:5000/products/${id}`;
+            const url = `https://shielded-beyond-98967.herokuapp.com/products/${id}`;
             fetch(url, {
                 method: 'DELETE',
                 headers: {
@@ -36,27 +36,29 @@ const ManageProduct = () => {
           <Table striped bordered hover>
             <thead>
               <tr>
-                <th>Barcode</th>
-                <th>Product Image</th>
                 <th>Product Name</th>
+                <th>Product Image</th>
+                <th>Minimum order</th>
                 <th>Stock Quntity </th>
-                <th>Suppler Name</th>
-                <th>MRP ৳</th>
+                <th>Model Number</th>
+                <th>Unit Price $</th>
+                <th>Product Discription</th>
                 <th>Delete</th>
-                <th>Update</th>
+                
               </tr>
             </thead>
             <tbody>
               {Product.map((res) => (
                 <tr key={res._id}>
-                  <td>{res.BarCode}</td>
-                  <td><img style={{width: '45px'}} src={res.Product_img_url} alt="" /></td>
-                  <td>{res.Brand}{" "}{res.Product}{" "} {res.Style}</td>
+                  <td>{res.name}</td>
+                  <td><img style={{width: '45px'}} src={res.img} alt="" /></td>
+                  <td>{res.minorder}</td>
                   <td>{res.Stock_Qty}</td>
-                  <td>{res.Brand} Ltd.</td>
-                  <td>৳ : {res.RPU}</td>
+                  <td>{res.model} </td>
+                  <td>$  {res.RPU}</td>
+                  <td>{res.long_discription}</td>
                   <td><button className="btn btn-danger" onClick={() => handleUserDelete(res._id)}>Delete</button></td>
-                  <td><Link to={`/inventory/${res._id}`}><button className="btn btn-primary">Update</button></Link></td>
+                  {/* <td><Link to={`/inventory/${res._id}`}><button className="btn btn-primary">Update</button></Link></td> */}
                 </tr>
               ))}
               

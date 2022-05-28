@@ -26,7 +26,7 @@ const Dashboard = () => {
           <Navbar.Collapse id="responsive-navbar-nav bg-primary h-100">
             <Nav className="ms-auto flex-column m-1 ">
               <Link className="btn btn-primary" to="/dashboard">Dashboard</Link>
-              <Link className="btn btn-primary" to="/dashboard/myprofile">My Profile</Link>
+              <Link className="btn btn-primary" to="/dashboard/profilecard">My Profile</Link>
               
               {admin? (<>
               <Link className="btn btn-primary" to="/dashboard/users"> Make Admin</Link>

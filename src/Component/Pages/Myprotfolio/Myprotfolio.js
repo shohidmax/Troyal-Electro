@@ -32,7 +32,7 @@ const Myprotfolio = () => {
                     <a className='btn btn-primary me-1' href="https://assignment-10-shohidmax.web.app">Onshort</a>
                     <a className='btn btn-primary me-1' href="https://okmodel.n6.workers.dev">Movie Website</a>
                     <a className='btn btn-primary me-1' href="https://assaignment-11-fullstack.web.app">Inventer Website</a>
-                    <a className='btn btn-primary me-1' href="https://my-first-siite.netlify.app">Community Center</a>
+                    <a className='btn btn-primary me-1' href="https://assaignment-12-fullstack.web.app/">Manufacture</a>
                 </div>
                 <h5 className='text-s mt-2'>My name is Sarwar Jahan. I'm a student of Marketing  BBA at Rajshahi College. My ambition is to Make a Complete Programmer and another hobby make myself a Businessman. My next Goal is TO Learn about python, Php, Laravel, And so on.</h5>
             </div>

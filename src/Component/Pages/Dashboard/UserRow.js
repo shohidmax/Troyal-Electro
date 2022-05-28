@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 const UserRow = ({ user, refetch }) => {
     const { email, role } = user;
     const makeAdmin = () => {
-        fetch(`http://localhost:5000/users/admin/${email}`, {
+        fetch(`https://shielded-beyond-98967.herokuapp.com/users/admin/${email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -12,13 +12,13 @@ const UserRow = ({ user, refetch }) => {
         })
             .then(res => {
                 if(res.status === 403){
-                    toast.error('Failed to Make an admin');
+                    alert.error('Failed to Make an admin');
                 }
                 return res.json()})
             .then(data => {
                 if (data.modifiedCount > 0) {
                     refetch();
-                    toast('Here is your toast.');
+                    alert('succesfull added an admin.');
                 }
 
             })
@@ -26,7 +26,7 @@ const UserRow = ({ user, refetch }) => {
     const removeAdmin = () => {
         const proceed = window.confirm(`Are you sure you want to remove from Admin? ${email}`);
         if(proceed){
-            fetch(`http://localhost:5000/users/nonadmin/${email}`, {
+            fetch(`https://shielded-beyond-98967.herokuapp.com/users/nonadmin/${email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -34,7 +34,7 @@ const UserRow = ({ user, refetch }) => {
         })
             .then(res => {
                 if(res.status === 403){
-                    toast.error('Failed to Make an admin');
+                    alert.error('Failed to Make an admin');
                 }
                 return res.json()})
             .then(data => {
