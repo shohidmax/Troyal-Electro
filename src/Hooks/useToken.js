@@ -11,7 +11,8 @@ const useToken = user =>{
             fetch(url, {
                 method:'PUT',
                 headers: {
-                    'content-type': 'application/json'
+                    'content-type': 'application/json',
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
                 },
                 body:JSON.stringify(currentUser)
             })

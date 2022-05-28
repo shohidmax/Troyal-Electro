@@ -10,7 +10,11 @@ const Purches = () => {
   const [Qtt, setQtt] = useState('');
   useEffect(() => {
     const url = `http://localhost:5000/products/${id}`;
-    fetch(url)
+    fetch(url,{
+      headers: {
+        'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+    }
+    })
       .then((r) => r.json())
       .then((data) => setPdata(data));
   }, []);
@@ -47,7 +51,8 @@ const handelOrder = event =>{
         fetch('http://localhost:5000/order', {
                     method: 'POST',
                     headers: {
-                        'content-type': 'application/json'
+                        'content-type': 'application/json',
+                        'authorization': `Bearer ${localStorage.getItem('accessToken')}`
                     },
                     body: JSON.stringify(orderdata)
                 })
