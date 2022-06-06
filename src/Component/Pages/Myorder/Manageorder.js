@@ -79,7 +79,7 @@ const Manageorder = () => {
                   <td>$ {res.unitprice * res.OrderQty}</td>
                   <td>{res.paid? <><button className="btn btn-success" >Paid</button></>:<><button className="btn btn-danger" onClick={() => handleUserDelete(res._id)}>Cancel order</button></>}</td>
                   <td> {res.status? <><button className="btn btn-success" >Shipped</button></>:<><button className="btn btn-info" onClick={() => makedelevary(res._id)}>Pending</button></>}</td>
-                  <td> {res.status? <p>Ready For Delevary</p>:<p>Delevered</p>}</td>
+                  <td> {res.status? <p>Delevered</p>:<p>DeleveredReady For Delevary</p>}</td>
                   
                 </tr>
               ))}

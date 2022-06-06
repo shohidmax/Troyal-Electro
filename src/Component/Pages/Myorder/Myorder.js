@@ -98,7 +98,7 @@ const Myorder = () => {
                                 </td>
                                 <td><small style={{width: '30px'}}> <span className='text-success'>{a.transactionId}</span></small></td>
                                 <td> {a.paid? <button className='btn btn-succcess text-success '> Deleverd</button>:<button className='btn btn-primary danger' onClick={() => handleCancil(a._id)}>Cancel order</button>}</td>
-                                <td> {a.status? <button className='btn btn-succcess text-success '> {a.status}</button>:<button className='btn btn-primary danger' onClick={() => handleCancil(a._id)}>Cancel order</button>}</td>
+                                <td> {!a.status? <button className='btn btn-succcess text-success '> {a.status}</button>:<button className='btn btn-primary danger' onClick={() => handleCancil(a._id)}>Cancel order</button>}</td>
                             </tr>)
                         }
 

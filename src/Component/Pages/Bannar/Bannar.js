@@ -47,7 +47,7 @@ const Bannar = () => {
             <div className="carousel-caption d-none d-md-block">
               <h5 className="text-warning">Best Quality Parts Hare</h5>
               
-              <Link to="../manageinventory" className="btn btn-primary">Manager Inventory</Link>
+              <Link to="../blogs" className="btn btn-primary">Go Blogs</Link>
             </div>
           </div>
           <div className="carousel-item">
@@ -55,14 +55,14 @@ const Bannar = () => {
             <div className="carousel-caption d-none d-md-block">
               <h5 className="text-warning">Best Quality IOT Product Here</h5>
               
-              <Link to="../manageinventory" className="btn btn-primary">Manager Inventory</Link>
+              <Link to="../blogs" className="btn btn-primary">Go Blogs</Link>
             </div>
           </div>
           <div className="carousel-item">
             <img src="https://i.ibb.co/xFF2TV4/20.png" className="d-block w-100" alt="..." />
             <div className="carousel-caption d-none d-md-block">
             <h5 className="text-warning">Best Quality  Product Here</h5>
-              <Link to="../manageinventory" className="btn btn-primary">Manager Inventory</Link>
+              <Link to="../blogs" className="btn btn-primary">Go Blogs</Link>
             </div>
           </div>
           <div className="carousel-item">
@@ -70,7 +70,7 @@ const Bannar = () => {
             <div className="carousel-caption d-none d-md-block">
             <h5 >Top International Brand</h5>
               
-              <Link to="../manageinventory" className="btn btn-primary">Manager Inventory</Link>
+              <Link to="../blogs" className="btn btn-primary">Go Blogs</Link>
             </div>
           </div>
         </div>

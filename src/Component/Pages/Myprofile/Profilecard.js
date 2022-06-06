@@ -13,17 +13,7 @@ const Profilecard = () => {
       .then((response) => response.json())
       .then((data) => setUser1(data));
   }, []);
-//   {
-//     "_id": "62905bf9df9ff8a6e2446ded",
-//     "email": "atifsupermart@gmail.com",
-//     "role": "admin",
-//     "address": "ababul",
-//     "education": "ababul",
-//     "location": "dablu",
-//     "phoneN": "https://meet.google.com",
-//     "socialurl": null
-//     }
-  
+
   return (
     <div className='container'>
     <div className='row'>

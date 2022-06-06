@@ -12,13 +12,25 @@ const Toolses = ({
   clicked,
   _id
 }) => {
+
+
+//   var myDiv = $('#trim');
+// var myDivlength = myDiv.text().length;
+
+// if(myDivlength>10){
+//     myDiv.text(myDiv.text().substring(0,10));
+//     myDiv.append(" ..." + '+');
+// }
+
+
+
   return (
     <div className="col-md-4">
       <div className=" shadow-lg card m-2 p-2 w-100" >
-        <img className="card-img-top image-fluid" src={img} alt="Card image cap" />
+        <img className="card-img-top image-fluid" style={{width: '100%', height: '300px'}} src={img} alt="Card image cap" />
         <div className="card-body">
-          <h5 className="card-title">{name}</h5>
-          <p className="card-text">{long_discription}</p>
+          <h5 className="card-title " style={{height: '50px'}}>{name}</h5>
+          <p>{`${long_discription.substring(200, long_discription)}... more`}</p>
         </div>
         <ul className="list-group list-group-flush">
           <li className="list-group-item">Model : {model}</li>
