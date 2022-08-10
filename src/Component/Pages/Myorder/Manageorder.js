@@ -42,7 +42,7 @@ const Manageorder = () => {
           .then(data => {
               if (data.modifiedCount > 0) {
                   
-                  alert('delever successfully .');
+                  alert('Delever successfully .');
               }
 
           })
@@ -66,6 +66,7 @@ const Manageorder = () => {
                 <th>Action</th>
                 <th>Payment status</th>
                 <th>Shipping status</th>
+              
               </tr>
             </thead>
             <tbody>

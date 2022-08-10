@@ -33,15 +33,7 @@ const Tools = () => {
             
         </div>
     );
-};
-{/* <Toolses
-                    key={tool._id}
-                    minorder={tool.minorder}
-                    model={tool.model}
-                    Stock_Qty={tool.Stock_Qty}
-                    RPU={tool.RPU}
-                    long_discription={tool.long_discription}
-                    img={tool.img}
-                    ></Toolses> */}
+}
+
 
 export default Tools;

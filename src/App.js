@@ -31,30 +31,28 @@ import RequireAdmin from './Component/Shaired/RequireAdmin';
 import Payment from './Component/Pages/Dashboard/Payment';
 import Updateprofile from './Component/Pages/Myprofile/Updateprofile';
 import Profilecard from './Component/Pages/Myprofile/Profilecard';
+import Invoice from './Component/Pages/Myorder/Invoice/Invoice';
 // import ManageProduct from './Component/Pages/Myorder/ManageProduct';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App mx-auto">
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/Blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/addproduct' element={<Addproduct></Addproduct>}></Route>
-        
-        
         <Route path='/myprotfolio' element={<Myprotfolio/>}></Route>
         <Route path='/purches/:id' element={<Requireauth><Purches/></Requireauth>}></Route>
-       
-        
         <Route path='/manageallorders' element={<ManageallOrders/>}></Route>
         <Route path='/tools' element={<Tools/>}></Route>
-        
         <Route path='/makeadmin' element={<MakeAdmin/>}></Route>
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/Login' element={<Login></Login>}></Route>
         <Route path='/review' element={<Review></Review>}></Route>
+        <Route path='/:id' element={<Invoice></Invoice>}></Route>
+        
         
         
         
@@ -73,9 +71,10 @@ function App() {
               <Route path="payment/:id" element={<Requireauth><Payment></Payment></Requireauth>}></Route>
               <Route path='/dashboard/addItem' element={<Requireauth><RequireAdmin><AddItem/></RequireAdmin></Requireauth>}></Route>
               <Route path='/dashboard/users' element={<Requireauth><Users></Users></Requireauth>}></Route>
-              <Route path='/dashboard/manageorder' element={<Requireauth><Manageorder></Manageorder></Requireauth>}></Route>
+              <Route path='/dashboard/manageorder' element={<Requireauth><RequireAdmin><Manageorder></Manageorder></RequireAdmin></Requireauth>}></Route>
               <Route path='/dashboard/manageproduct' element={<RequireAdmin><ManageProduct/></RequireAdmin>}></Route>
               <Route path='/dashboard/updateprofile' element={<Requireauth><Updateprofile></Updateprofile></Requireauth>}></Route>
+              {/* <Route path='/dashboard/inv:id' element={<Requireauth><Invoice></Invoice></Requireauth>}></Route> */}
         </Route> 
         <Route path='/Updatepassword' element={<UpdatePassword></UpdatePassword>}>SignUp</Route> 
         <Route path='/passwordreset' element={<Passwordreset></Passwordreset>}>SignUp</Route> 

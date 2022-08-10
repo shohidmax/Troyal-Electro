@@ -2,7 +2,7 @@ import React from "react";
 
 const Explore = () => {
   return (
-    <div className="container m-3">
+    <div className="container m-3 mx-auto">
       <div className="row justify-content-start">
         <div className="row justify-content-evenly">
           <div className="col-6">

@@ -9,7 +9,7 @@ import Walmart from "./logos/Walmart.svg";
 
 const Onlinepartners = () => {
   return (
-    <div className="container">
+    <div className="container mx-auto">
       <div className="row">
           <h1> Our Online Partner</h1>
         <div className="lg:col-md-12">

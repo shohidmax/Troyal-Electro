@@ -30,7 +30,7 @@ const Toolses = ({
         <img className="card-img-top image-fluid" style={{width: '100%', height: '300px'}} src={img} alt="Card image cap" />
         <div className="card-body">
           <h5 className="card-title " style={{height: '50px'}}>{name}</h5>
-          <p>{`${long_discription.substring(200, long_discription)}... more`}</p>
+          <p>{`${long_discription.substring(150, long_discription)}... more`}</p>
         </div>
         <ul className="list-group list-group-flush">
           <li className="list-group-item">Model : {model}</li>

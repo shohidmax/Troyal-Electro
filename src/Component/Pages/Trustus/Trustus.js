@@ -4,7 +4,7 @@ import React from 'react';
 
 const Trustus = () => {
     return (
-        <div className='container m-3'>
+        <div className='container mx-auto m-3'>
             <div className='row'>
                 <h1 className='text-info'>Million Buseness Trust US</h1>
                 <div className='col-md-3'>

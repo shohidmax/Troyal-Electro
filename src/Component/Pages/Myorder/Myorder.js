@@ -75,6 +75,7 @@ const Myorder = () => {
                             <th>Transaction id</th>
                             <th>Action</th>
                             <th>status</th>
+                            <th>Rating </th>
                         </tr>
 
 
@@ -90,15 +91,16 @@ const Myorder = () => {
                                 <td>{a.unitprice}</td>
                                 <td>$ {a.payprice}</td>
                                 <td>
-                                    {(a.payprice && !(a.paid)) && <Link to={`/dashboard/payment/${a._id}`}><button className='btn  btn-success'>pay</button></Link>}
+                                    {(a.payprice && !(a.paid)) && <Link to={`/dashboard/payment/${a._id}`}><button className='btn  btn-danger'>Pay Now</button></Link>}
                                     {(a.payprice && a.paid) && <div>
                                         <p><span className='text-success btn btn-sucess'>Paid</span></p>
                                         
                                     </div>}
                                 </td>
-                                <td><small style={{width: '30px'}}> <span className='text-success'>{a.transactionId}</span></small></td>
-                                <td> {a.paid? <button className='btn btn-succcess text-success '> Deleverd</button>:<button className='btn btn-primary danger' onClick={() => handleCancil(a._id)}>Cancel order</button>}</td>
-                                <td> {!a.status? <button className='btn btn-succcess text-success '> {a.status}</button>:<button className='btn btn-primary danger' onClick={() => handleCancil(a._id)}>Cancel order</button>}</td>
+                                <td><small style={{width: '30px'}}> <p className='text-success'>{a.transactionId}</p></small></td>
+                                <td> {a.paid? <button className='btn btn-succcess text-success '> Order Placed</button>:<button className='btn btn-primary danger' onClick={() => handleCancil(a._id)}>Cancel order</button>}</td>
+                                <td> {!a.status? <button className='btn btn-danger danger' onClick={() => handleCancil(a._id)}>Cancel  </button>:<button className='btn btn-succcess text-success '> Delevered</button>}</td>
+                                <td> {!a.status? <button className='btn btn-primary danger'>Wait</button>:<Link to={`/${a._id && window.print()}`}><button className="btn btn-primary w-50">purches</button></Link>}</td>
                             </tr>)
                         }
 
@@ -113,3 +115,11 @@ const Myorder = () => {
 };
 
 export default Myorder;
+
+
+
+// a.transactionId
+
+// `${a.transactionId.substring(200, a.transactionId)}..more`
+
+{/* <p>{`${a.transactionId.substring(150, a.transactionId)}... more`}</p> */}

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Bannar = () => {
     return (
-        <div className="w-100">
+        <div className="w-100 mx-auto">
       <div 
         id="carouselExampleCaptions"
         className="carousel slide"

@@ -38,6 +38,7 @@ const Dashboard = () => {
               </>):(<>
               <Link className="btn btn-primary" to="/dashboard/addreview">Add Review</Link>
               <Link className="btn btn-primary" to="/dashboard/myorder">My order</Link>
+              <Link className="btn btn-primary" to="/dashboard/inv">pdf</Link>
               <button className="btn btn-primary" onClick={LogOut} > LogOut</button></>)
 
               }
